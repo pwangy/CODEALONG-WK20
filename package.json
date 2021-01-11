@@ -9,18 +9,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/node": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
+    "@babel/core": "*",
+    "@babel/node": "*",
+    "@babel/preset-env": "*",
     "body-parser": "*",
     "check": "*",
     "cors": "*",
     "express": "*",
-    "nodemon": "^2.0.7"
+    "mongoose": "*",
+    "nodemon": "*"
   },
   "devDependencies": {
-    "eslint": "^7.17.0",
-    "eslint-config-airbnb": "^18.2.1",
+    "eslint": "*",
+    "eslint-config-airbnb": "*",
     "eslint-config-import": "*"
   }
 }
