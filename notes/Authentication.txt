@@ -1,0 +1,39 @@
+Authentication - Van
+
+When building our API for logins, we should consider the following 2 things.
+  authorization - not necessarily required, but needed to specify levels of access a user has
+  authentication - allows your users to know who they are and post as themselves in your app
+
+
+
+Token Authentication
+Whiteboard:
+
+        API  -----> SAVE USER
+      |     ^
+      |     |
+  TOKEN     |
+      |     REGISTER: USERNAME, PASSWORD
+      v     ^
+        USER
+
+
+  during REGISTRATION our API endpoint needs to be able to take a user with their
+    username
+    password
+  and SAVE these details to our DB
+
+  before saving to db, we also need to:
+    check that username is unique (not already in use)
+    validate both username and password 
+    encript password
+
+
+  once the above has been done,
+  the api returns a token to the user. 
+  a token serves to:
+    identitify user in future requests
+    automatically authenticates them
+  user will have to save the token for later use
+
+see code.
