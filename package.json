@@ -12,6 +12,7 @@
     "@babel/core": "*",
     "@babel/node": "*",
     "@babel/preset-env": "*",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "*",
     "check": "*",
     "cors": "*",
