@@ -36,4 +36,20 @@ Whiteboard:
     automatically authenticates them
   user will have to save the token for later use
 
-see code.
+see code in server.js
+
+
+
+
+POST /sessions
+Whiteboard:
+  { name: "Bob", password: "foobar" }
+
+see screencap in notes folder.
+
+
+
+
+
+PART 2: Access Tokens
+see server.js and lines with "authenticateUser"
