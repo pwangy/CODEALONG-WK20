@@ -1,0 +1,55 @@
+Defensive Design - Van
+
+Security as a large field. 
+
+Tips:
+> keep up to date on security vunerabilities
+> don't trust user input that is received. always: validate data on both font and backend.
+
+
+3 vunerabilities to be aware of
+  none are air-tight solutions, but they can help mitigate risk.
+
+1. XSS: Cross-site scripting
+  when a user can inject malicious javascript from one page which then executes on someone else's computer.  
+    Example: An embedded post-- a link shared on fb which contains an embedded script tag. when clicked, it then executes to launch a new tab which directs you to a fake site asking for your login info. or it could prompt you to enter other sensitive info.
+
+  to protect against this, we can sanitize our HTML
+    Example: 
+      > 
+      can be rewritten as:
+      &gt;
+      the latter is what we want to show up in the content of our post.
+
+      luckily: React already does this for us. We would have to opt OUT of santizing html since it is the default behavior.
+
+2. CSP: Content Security Policy
+  > relatively modern feature. 
+  > define where content can be loaded from and prevents loading of these resources from any other place.
+  > CSP is placed in the header of your HTML
+  > the idea is to whitelist where content is allowed to come from for your app/site.
+
+
+    Returning to the example above. We could specify that we only want to display content that originated from fb.com and no other place. 
+
+3. CORS: Cross-Origin Resource Sharing   
+  > another header value that define what domains can use your API
+
+  we are using cors middleware in our javascript backend, it can be even more specific so read up on the documentation to understanding how you might use it down the line. 
+
+
+:: BACKDOORS
+
+  target="_blank"
+    be aware when using in HTML
+    it is possible for these links to be targeted and used to reroute users to malicious sites or point to phishing attempts.
+    
+    
+    to prevent this, we can use include the following in our tag.
+
+    <a href="link.com" target="_blank" rel="noopener noreferrer">
+
+    noopener and noreferrer prevent redirecting and disables the browser behavior for that particular instance. (must be specified in every link tag)
+
+
+trust, but verify (on front AND backend)
